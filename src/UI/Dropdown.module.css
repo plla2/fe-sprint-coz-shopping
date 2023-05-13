@@ -1,0 +1,36 @@
+.bubble
+{
+position: absolute;
+width: 150px;
+height: 100px;
+padding: 0px;
+background: #FFFFFF;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+box-shadow: 8px 8px 13px #c5c5c5;
+right: 20px;
+}
+
+.bubble:after
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 0 15px 15px;
+border-color: #FFFFFF transparent;
+display: block;
+width: 0;
+z-index: 1;
+top: -15px;
+left: 170px;
+}
+li{
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 6px;
+  text-align: center;
+  color: black;
+}
+li:last-child{
+  border: none;
+}
