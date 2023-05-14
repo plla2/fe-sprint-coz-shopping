@@ -1,5 +1,6 @@
 .bubble
 {
+z-index: 5;
 position: absolute;
 width: 150px;
 height: 100px;
@@ -26,11 +27,15 @@ top: -15px;
 left: 170px;
 }
 li{
-  border-bottom: 1px solid rgba(0,0,0,0.2);
+  /* border-bottom: 1px solid rgba(0,0,0,0.2); */
   padding: 6px;
   text-align: center;
   color: black;
 }
 li:last-child{
   border: none;
+}
+li:hover{
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.2);
 }
