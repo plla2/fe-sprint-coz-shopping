@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import MainPageItem from './MainPageItem';
+import BookMarkItem from './BookMarkItem';
 
 
 const MainPage = () => {
@@ -17,10 +18,13 @@ const MainPage = () => {
       });
   }, []);
   console.log(res)
+
   return (
     <>
-      <h2>상품 페이지</h2>
+      <h2 style={{ padding: "15px" }}>상품 페이지</h2>
       <MainPageItem itemList={res} />
+      <h2 style={{ padding: "5px 10px" }}>북마크 리스트</h2>
+      <BookMarkItem />
     </>
   )
 }

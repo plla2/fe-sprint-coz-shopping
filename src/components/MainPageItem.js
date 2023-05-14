@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from "./MainPage.module.css"
+import bookmark from "../assets/Property 1=off.png"
 
 const MainPageItem = ({ itemList }) => {
   return (
@@ -14,6 +15,22 @@ const MainPageItem = ({ itemList }) => {
                     className={classes.img}
                     src={item.image_url}
                     alt={item.title}
+                  />
+                  {/* {bookMark === false ? <img
+                    className={classes.bookmark}
+                    src={bookmark}
+                    alt='bookmarkOff'
+                    onClick={() => setBookMark(!bookMark)}
+                  /> : <img
+                    className={classes.bookmark}
+                    src={bookmarkon}
+                    alt='bookmark'
+                    onClick={() => setBookMark(!bookMark)}
+                  />} */}
+                  <img
+                    className={classes.bookmark}
+                    src={bookmark}
+                    alt='bookmark'
                   />
                 </span>
                 <span className={classes.firstLine}>
@@ -39,8 +56,13 @@ const MainPageItem = ({ itemList }) => {
                     src={item.image_url}
                     alt={item.title}
                   />
+                  <img
+                    className={classes.bookmark}
+                    src={bookmark}
+                    alt='bookmark'
+                  />
                 </span>
-                <span className={classes.title}>{item.title}</span>
+                <span className={classes.title}>#{item.title}</span>
               </li>
             );
           case "Exhibition":
@@ -51,6 +73,11 @@ const MainPageItem = ({ itemList }) => {
                     className={classes.img}
                     src={item.image_url}
                     alt={item.title}
+                  />
+                  <img
+                    className={classes.bookmark}
+                    src={bookmark}
+                    alt='bookmark'
                   />
                 </span>
                 <span className={classes.title}>{item.title}</span>{" "}
@@ -65,6 +92,11 @@ const MainPageItem = ({ itemList }) => {
                     className={classes.img}
                     src={item.brand_image_url}
                     alt={item.brand_name}
+                  />
+                  <img
+                    className={classes.bookmark}
+                    src={bookmark}
+                    alt='bookmark'
                   />
                 </span>
                 <span className={classes.firstLine}>
