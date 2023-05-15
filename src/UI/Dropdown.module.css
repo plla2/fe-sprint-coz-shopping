@@ -3,7 +3,7 @@
 z-index: 5;
 position: absolute;
 width: 150px;
-height: 100px;
+height: 95px;
 padding: 0px;
 background: #FFFFFF;
 -webkit-border-radius: 10px;
@@ -38,4 +38,9 @@ li:last-child{
 li:hover{
   border-radius: 10px;
   background-color: rgba(0,0,0,0.2);
+}
+.name{
+  width: 150px;
+  text-align: center;
+  padding: 5px;
 }

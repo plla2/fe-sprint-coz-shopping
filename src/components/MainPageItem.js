@@ -1,8 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import classes from "./MainPage.module.css"
 import bookmark from "../assets/Property 1=off.png"
 
-const MainPageItem = ({ itemList }) => {
+const MainPageItem = ({ itemList, bookmarkState, setBookmarkState }) => {
+  const handleBookmark = (item) => {
+    const bookmark = JSON.parse(localStorage.getItem("bookmark")) || [];
+    const itemIndex = bookmark.findIndex(x => x.id === item.id);
+    const isExistingItem = itemIndex !== -1;
+
+    let updatedBookmark;
+    if (isExistingItem) {
+      updatedBookmark = bookmark.filter((_, index) => index !== itemIndex);
+    } else {
+      updatedBookmark = [item, ...bookmark];
+    }
+    localStorage.setItem("bookmark", JSON.stringify(updatedBookmark));
+    setBookmarkState(updatedBookmark)
+  }
+
   return (
     <ul className={classes.itemList}>
       {itemList.map(item => {
@@ -16,21 +31,11 @@ const MainPageItem = ({ itemList }) => {
                     src={item.image_url}
                     alt={item.title}
                   />
-                  {/* {bookMark === false ? <img
-                    className={classes.bookmark}
-                    src={bookmark}
-                    alt='bookmarkOff'
-                    onClick={() => setBookMark(!bookMark)}
-                  /> : <img
-                    className={classes.bookmark}
-                    src={bookmarkon}
-                    alt='bookmark'
-                    onClick={() => setBookMark(!bookMark)}
-                  />} */}
                   <img
                     className={classes.bookmark}
                     src={bookmark}
                     alt='bookmark'
+                    onClick={() => handleBookmark(item)}
                   />
                 </span>
                 <span className={classes.firstLine}>
@@ -60,9 +65,10 @@ const MainPageItem = ({ itemList }) => {
                     className={classes.bookmark}
                     src={bookmark}
                     alt='bookmark'
+                    onClick={() => handleBookmark(item)}
                   />
                 </span>
-                <span className={classes.title}>#{item.title}</span>
+                <span className={classes.Catetitle}>#{item.title}</span>
               </li>
             );
           case "Exhibition":
@@ -78,7 +84,7 @@ const MainPageItem = ({ itemList }) => {
                     className={classes.bookmark}
                     src={bookmark}
                     alt='bookmark'
-                  />
+                    onClick={() => handleBookmark(item)} />
                 </span>
                 <span className={classes.title}>{item.title}</span>{" "}
                 {item.sub_title}
@@ -97,7 +103,7 @@ const MainPageItem = ({ itemList }) => {
                     className={classes.bookmark}
                     src={bookmark}
                     alt='bookmark'
-                  />
+                    onClick={() => handleBookmark(item)} />
                 </span>
                 <span className={classes.firstLine}>
                   <span className={classes.title}>{item.brand_name}</span>
