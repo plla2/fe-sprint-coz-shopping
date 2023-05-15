@@ -4,17 +4,23 @@ import Header from './components/Header';
 import Main from './pages/Main';
 import CartListPage from './pages/CartListPage';
 import BookMarkPage from './pages/BookMarkPage';
+import { useState } from 'react';
+import Footer from './components/Footer';
 
 function App() {
+  const bookmarkRender = JSON.parse(localStorage.getItem("bookmark"));
+  const [bookmarkState, setBookmarkState] = useState(bookmarkRender)
+
   return (
     <BrowserRouter>
       <div>
         <Header />
         <Routes>
-          <Route path='/' element={<Main />} />
+          <Route path='/' element={<Main bookmarkState={bookmarkState} setBookmarkState={setBookmarkState} />} />
           <Route path="/cartlist" element={<CartListPage />} />
           <Route path="/bookmark" element={<BookMarkPage />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
