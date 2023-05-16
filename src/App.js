@@ -7,8 +7,6 @@ import BookMarkPage from './pages/BookMarkPage';
 import { useEffect, useState } from 'react';
 import Footer from './components/Footer';
 import axios from 'axios';
-import Modal from './UI/Modal/Modal';
-import { styled } from 'styled-components';
 
 function App() {
   const bookmarkRender = JSON.parse(localStorage.getItem("bookmark"));

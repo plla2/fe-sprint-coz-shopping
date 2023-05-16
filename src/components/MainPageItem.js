@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import classes from "./MainPage.module.css"
 import bookmark from "../assets/Property 1=off.png"
 import Modal from '../UI/Modal/Modal';
 import { styled } from 'styled-components';
 
-const MainPageItem = ({ itemList, bookmarkState, setBookmarkState }) => {
+const MainPageItem = ({ itemList, setBookmarkState }) => {
   const [isOpen, setIsOpen] = useState(false);
   const onClickButton = () => {
     setIsOpen(true);
