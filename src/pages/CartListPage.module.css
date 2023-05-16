@@ -1,13 +1,15 @@
 .itemList {
   display: flex;
+  justify-content: center;
   width: 100%;
-  justify-content: start;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .item {
   display: flex;
   flex-direction: column;
-  margin: 0 10px;
+  margin: 10px 10px;
 }
 
 .img {
@@ -18,14 +20,14 @@
 
 .imgBox {
   position: relative;
-  width: 325px;
+  width: 315px;
   height: 180px;
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
 }
 
-.bookmarkon {
+.bookmark {
   position: absolute;
   bottom: 10px;
   right: 10px;
