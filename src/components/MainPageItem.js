@@ -66,17 +66,21 @@ const MainPageItem = ({ itemList, setBookmarks }) => {
             return (
               <li className={classes.item} key={item.id}>
                 <span className={classes.imgBox}>
-                  <img
-                    className={classes.img}
-                    src={item.image_url}
-                    alt={item.title}
-                  />
-                  <img
-                    className={classes.bookmark}
-                    src={bookmark}
-                    alt='bookmark'
-                    onClick={() => handleBookmark(item)}
-                  />
+                  <AppWrap>
+                    {isOpen && (<Modal bookmark={bookmark} title={item.title} img={item.image_url} open={isOpen} onClose={() => { setIsOpen(false) }} />)}
+                    <img
+                      className={classes.img}
+                      src={item.image_url}
+                      alt={item.title}
+                      onClick={onClickButton}
+                    />
+                    <img
+                      className={classes.bookmark}
+                      src={bookmark}
+                      alt='bookmark'
+                      onClick={() => handleBookmark(item)}
+                    />
+                  </AppWrap>
                 </span>
                 <span className={classes.Catetitle}>#{item.title}</span>
               </li>
@@ -85,16 +89,20 @@ const MainPageItem = ({ itemList, setBookmarks }) => {
             return (
               <li className={classes.item} key={item.id}>
                 <span className={classes.imgBox}>
-                  <img
-                    className={classes.img}
-                    src={item.image_url}
-                    alt={item.title}
-                  />
-                  <img
-                    className={classes.bookmark}
-                    src={bookmark}
-                    alt='bookmark'
-                    onClick={() => handleBookmark(item)} />
+                  <AppWrap>
+                    {isOpen && (<Modal bookmark={bookmark} title={item.title} img={item.image_url} open={isOpen} onClose={() => { setIsOpen(false) }} />)}
+                    <img
+                      className={classes.img}
+                      src={item.image_url}
+                      alt={item.title}
+                      onClick={onClickButton}
+                    />
+                    <img
+                      className={classes.bookmark}
+                      src={bookmark}
+                      alt='bookmark'
+                      onClick={() => handleBookmark(item)} />
+                  </AppWrap>
                 </span>
                 <span className={classes.title}>{item.title}</span>{" "}
                 {item.sub_title}
@@ -104,16 +112,20 @@ const MainPageItem = ({ itemList, setBookmarks }) => {
             return (
               <li className={classes.item} key={item.id}>
                 <span className={classes.imgBox}>
-                  <img
-                    className={classes.img}
-                    src={item.brand_image_url}
-                    alt={item.brand_name}
-                  />
-                  <img
-                    className={classes.bookmark}
-                    src={bookmark}
-                    alt='bookmark'
-                    onClick={() => handleBookmark(item)} />
+                  <AppWrap>
+                    {isOpen && (<Modal bookmark={bookmark} title={item.brand_name} img={item.brand_image_url} open={isOpen} onClose={() => { setIsOpen(false) }} />)}
+                    <img
+                      className={classes.img}
+                      src={item.brand_image_url}
+                      alt={item.brand_name}
+                      onClick={onClickButton}
+                    />
+                    <img
+                      className={classes.bookmark}
+                      src={bookmark}
+                      alt='bookmark'
+                      onClick={() => handleBookmark(item)} />
+                  </AppWrap>
                 </span>
                 <span className={classes.firstLine}>
                   <span className={classes.title}>{item.brand_name}</span>
