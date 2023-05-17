@@ -1,0 +1,29 @@
+.filterContainer{
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+.img{
+  cursor: pointer;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.textContainer{
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  cursor: pointer;
+}
+.Text{
+  display: flex;
+  color:#412DD4;
+  text-decoration: underline;
+  font-weight: 800;
+  
+}
+.remainText{
+  justify-content: center;
+}

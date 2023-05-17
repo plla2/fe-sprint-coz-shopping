@@ -1,0 +1,17 @@
+.header{
+  padding: 30px 30px 20px 30px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom: 10px solid rgba(0,0,0,0.5); */
+  box-shadow: 6px 6px 12px #c5c5c5;
+}
+
+.logo{
+  margin-right: 20px;
+}
+.hambur{
+  height: 20px;
+  cursor: pointer;
+}
+
