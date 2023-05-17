@@ -4,7 +4,7 @@ import bookmark from "../assets/Property 1=off.png"
 import Modal from '../UI/Modal/Modal';
 import { styled } from 'styled-components';
 
-const MainPageItem = ({ itemList, setBookmarkState }) => {
+const MainPageItem = ({ itemList, setBookmarks }) => {
   const [isOpen, setIsOpen] = useState(false);
   const onClickButton = () => {
     setIsOpen(true);
@@ -21,7 +21,7 @@ const MainPageItem = ({ itemList, setBookmarkState }) => {
       updatedBookmark = [item, ...bookmark];
     }
     localStorage.setItem("bookmark", JSON.stringify(updatedBookmark));
-    setBookmarkState(updatedBookmark)
+    setBookmarks(updatedBookmark)
   }
 
   return (

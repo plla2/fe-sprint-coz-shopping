@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import classes from "./BookmarkItem.module.css"
 import bookmarkon from "../assets/Property 1=on.png"
 
-const BookmarkItem = ({ bookmarkState, setBookmarkState }) => {
+const BookmarkItem = ({ bookmarks, setBookmarks }) => {
 
   const handleBookmark = (item) => {
     const bookmark = JSON.parse(localStorage.getItem("bookmark")) || [];
@@ -16,13 +16,13 @@ const BookmarkItem = ({ bookmarkState, setBookmarkState }) => {
       updatedBookmark = [item, ...bookmark];
     }
     localStorage.setItem("bookmark", JSON.stringify(updatedBookmark));
-    setBookmarkState(updatedBookmark)
+    setBookmarks(updatedBookmark)
   }
 
   return (
     <div>
       <ul className={classes.itemList}>
-        {bookmarkState.map(item => {
+        {bookmarks.map(item => {
           switch (item.type) {
             case "Product":
               return (

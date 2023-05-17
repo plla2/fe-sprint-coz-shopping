@@ -5,7 +5,7 @@ import BookmarkItem from './BookMarkItem';
 import classes from "./MainPage.module.css"
 
 
-const MainPage = ({ bookmarkState, setBookmarkState }) => {
+const MainPage = ({ bookmarks, setBookmarks }) => {
   const [res, setRes] = useState([])
   useEffect(() => {
     axios.get('http://cozshopping.codestates-seb.link/api/v1/products?',
@@ -23,9 +23,9 @@ const MainPage = ({ bookmarkState, setBookmarkState }) => {
   return (
     <>
       <h2 className={classes.itemHead} >상품 페이지</h2>
-      <MainPageItem itemList={res} bookmarkState={bookmarkState} setBookmarkState={setBookmarkState} />
+      <MainPageItem itemList={res} bookmarks={bookmarks} setBookmarks={setBookmarks} />
       <h2 className={classes.bookItemHead} >북마크 리스트</h2>
-      <BookmarkItem bookmarkState={bookmarkState} setBookmarkState={setBookmarkState} />
+      <BookmarkItem bookmarks={bookmarks} setBookmarks={setBookmarks} />
     </>
   )
 }

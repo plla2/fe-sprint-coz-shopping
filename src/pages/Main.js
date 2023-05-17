@@ -2,10 +2,10 @@ import React from 'react'
 import MainPage from '../components/MainPage'
 
 
-const Main = ({ bookmarkState, setBookmarkState, itemList }) => {
+const Main = ({ bookmarks, setBookmarks, }) => {
   return (
     <>
-      <MainPage bookmarkState={bookmarkState} setBookmarkState={setBookmarkState} />
+      <MainPage bookmarks={bookmarks} setBookmarks={setBookmarks} />
     </>
   )
 }

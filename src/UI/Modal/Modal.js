@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { styled } from 'styled-components';
 import ModalContainer from './ModalContainer';
-import useOutSideClick from './useOutSideClick';
+import useOutSideClick from '../../hooks/useOutSideClick'
 import bookmark from "../../assets/Property 1=off.png"
 
 
