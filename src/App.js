@@ -24,15 +24,15 @@ function App() {
         setRes2(result)
       });
   }, [filter]);
-  // console.log(bookmarkRender)
+
   return (
     <BrowserRouter>
       <div>
         <Header />
         <Routes>
-          <Route path='/' element={<Main bookmarkState={bookmarks} setBookmarkState={setBookmarks} />} />
+          <Route path='/' element={<Main bookmarks={bookmarks} setBookmarks={setBookmarks} />} />
           <Route path="/products/list" element={<CartListPage filter={filter} setFilter={setFilter} setBookmarkState={setBookmarks} itemList2={res2} />} />
-          <Route path="/bookmark" element={<BookMarkPage />} />
+          <Route path="/bookmark" element={<BookMarkPage filter={filter} setFilter={setFilter} />} />
         </Routes>
         <Footer />
       </div>
