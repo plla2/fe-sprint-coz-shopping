@@ -7,7 +7,6 @@ import exhibitionImg from "../assets/기획전.png"
 import brandImg from "../assets/브랜드.png"
 
 const Filter = ({ filter, setFilter }) => {
-
   const filterHandler = (type) => {
     setFilter(type);
   }
