@@ -18,11 +18,12 @@ const BookmarkItem = ({ bookmarks, setBookmarks }) => {
     localStorage.setItem("bookmark", JSON.stringify(updatedBookmark));
     setBookmarks(updatedBookmark)
   }
-
+  const renderItem = bookmarks.slice(0, 4)
+  console.log(renderItem)
   return (
     <div>
       <ul className={classes.itemList}>
-        {bookmarks.map(item => {
+        {renderItem.map(item => {
           switch (item.type) {
             case "Product":
               return (

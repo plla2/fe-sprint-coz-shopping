@@ -32,7 +32,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main bookmarks={bookmarks} setBookmarks={setBookmarks} />} />
           <Route path="/products/list" element={<CartListPage filter={filter} setFilter={setFilter} setBookmarkState={setBookmarks} itemList2={res2} />} />
-          <Route path="/bookmark" element={<BookMarkPage />} />
+          <Route path="/bookmark" element={<BookMarkPage filter={filter} setFilter={setFilter} />} />
         </Routes>
         <Footer />
       </div>
