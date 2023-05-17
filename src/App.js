@@ -17,13 +17,17 @@ function App() {
     axios.get('http://cozshopping.codestates-seb.link/api/v1/products?'
     )
       .then(response => {
+        setRes2(response.data)
         if (filter === "every") {
           return setRes2(response.data);
         }
-        const result = res2.filter((el) => el.type === filter);
+        const result = response.data.filter((el) => el.type === filter);
         setRes2(result)
-      });
+      }
+      );
+
   }, [filter]);
+
 
   return (
     <BrowserRouter>
@@ -31,7 +35,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Main bookmarks={bookmarks} setBookmarks={setBookmarks} />} />
-          <Route path="/products/list" element={<CartListPage filter={filter} setFilter={setFilter} setBookmarkState={setBookmarks} itemList2={res2} />} />
+          <Route path="/products/list" element={<CartListPage filter={filter} setFilter={setFilter} setBookmarkState={setBookmarks} itemList2={res2} setRes2={setRes2} />} />
           <Route path="/bookmark" element={<BookMarkPage filter={filter} setFilter={setFilter} />} />
         </Routes>
         <Footer />
