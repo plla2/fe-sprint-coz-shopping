@@ -57,3 +57,9 @@
   text-align: start;
   margin-left: 10px;
 }
+.itemHead{
+  padding: 15px;
+}
+.bookItemHead{
+  padding: 10px 15px;
+}

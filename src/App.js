@@ -10,23 +10,28 @@ import axios from 'axios';
 
 function App() {
   const bookmarkRender = JSON.parse(localStorage.getItem("bookmark"));
-  const [bookmarkState, setBookmarkState] = useState(bookmarkRender)
+  const [bookmarks, setBookmarks] = useState(bookmarkRender)
   const [res2, setRes2] = useState([])
+  const [filter, setFilter] = useState("every")
   useEffect(() => {
     axios.get('http://cozshopping.codestates-seb.link/api/v1/products?'
     )
       .then(response => {
-        setRes2(response.data);
+        if (filter === "every") {
+          return setRes2(response.data);
+        }
+        const result = res2.filter((el) => el.type === filter);
+        setRes2(result)
       });
-  }, []);
-  // console.log(res2)
+  }, [filter]);
+  // console.log(bookmarkRender)
   return (
     <BrowserRouter>
       <div>
         <Header />
         <Routes>
-          <Route path='/' element={<Main bookmarkState={bookmarkState} setBookmarkState={setBookmarkState} />} />
-          <Route path="/products/list" element={<CartListPage bookmarkState={bookmarkState} setBookmarkState={setBookmarkState} itemList2={res2} />} />
+          <Route path='/' element={<Main bookmarkState={bookmarks} setBookmarkState={setBookmarks} />} />
+          <Route path="/products/list" element={<CartListPage filter={filter} setFilter={setFilter} setBookmarkState={setBookmarks} itemList2={res2} />} />
           <Route path="/bookmark" element={<BookMarkPage />} />
         </Routes>
         <Footer />
