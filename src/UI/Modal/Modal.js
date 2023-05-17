@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { styled } from 'styled-components';
 import ModalContainer from './ModalContainer';
 import useOutSideClick from './useOutSideClick';
