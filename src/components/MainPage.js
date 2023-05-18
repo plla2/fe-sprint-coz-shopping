@@ -22,7 +22,7 @@ const MainPage = ({ bookmarks, setBookmarks }) => {
 
   return (
     <>
-      <h2 className={classes.itemHead} >상품 페이지</h2>
+      <h2 className={classes.itemHead} >상품 리스트</h2>
       <MainPageItem itemList={res} bookmarks={bookmarks} setBookmarks={setBookmarks} />
       <h2 className={classes.bookItemHead} >북마크 리스트</h2>
       <BookmarkItem bookmarks={bookmarks} setBookmarks={setBookmarks} />
