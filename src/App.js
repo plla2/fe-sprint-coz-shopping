@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
 import Main from './pages/Main';
-import CartListPage from './pages/CartListPage';
-import BookMarkPage from './pages/BookMarkPage';
 import { useEffect, useState } from 'react';
-import Footer from './components/Footer';
 import axios from 'axios';
+import Header from './components/Header/Header';
+import CartListPage from './pages/ProductPage/CartListPage';
+import BookMarkPage from './pages/BookMarkPage/BookMarkPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const bookmarkRender = JSON.parse(localStorage.getItem("bookmark")) || [];

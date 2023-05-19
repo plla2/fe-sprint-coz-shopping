@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import MainPageItem from './MainPageItem';
-import BookmarkItem from './BookMarkItem';
-import classes from "./MainPage.module.css"
+import classes from "./MainPageItem/MainPage.module.css"
+import MainPageItem from './MainPageItem/MainPageItem';
+import BookmarkItem from './BookMarkItem/BookMarkItem';
 
 
 const MainPage = ({ bookmarks, setBookmarks }) => {

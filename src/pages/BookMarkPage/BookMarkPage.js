@@ -1,9 +1,19 @@
-import React from 'react'
-import classes from "./CartListPage.module.css"
-import Filter from '../components/Filter'
-import Card from '../components/Card'
+import React, { useEffect, useState } from 'react'
+import classes from "./BookMarkPage.module.css"
+import Filter from '../../components/Filter/Filter';
+import Card from '../../components/Card/Card';
 
-const CartListPage = ({ itemList2, setBookmarkState, filter, setFilter, setRes2 }) => {
+
+const BookMarkPage = ({ filter, setFilter, setBookmarks }) => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const storage = JSON.parse(localStorage.getItem("bookmark"));
+    if (filter === 'every') {
+      return setData(storage)
+    }
+    setData(storage.filter((item) => item.type === filter))
+  }, [filter])
   const handleBookmark = (item) => {
     const bookmark = JSON.parse(localStorage.getItem("bookmark")) || [];
     const itemIndex = bookmark.findIndex(x => x.id === item.id);
@@ -16,14 +26,13 @@ const CartListPage = ({ itemList2, setBookmarkState, filter, setFilter, setRes2 
       updatedBookmark = [item, ...bookmark];
     }
     localStorage.setItem("bookmark", JSON.stringify(updatedBookmark));
-    setBookmarkState(updatedBookmark)
+    setBookmarks(updatedBookmark)
   }
-
   return (
     <>
-      <Filter setRes2={setRes2} itemList2={itemList2} filter={filter} setFilter={setFilter} />
+      <Filter filter={filter} setFilter={setFilter} />
       <ul className={classes.itemList}>
-        {itemList2.map(item => {
+        {data.map(item => {
           return (
             <Card item={item} key={`${item.id}`} handleBookmark={handleBookmark} />
           )
@@ -33,4 +42,4 @@ const CartListPage = ({ itemList2, setBookmarkState, filter, setFilter, setRes2 
   )
 }
 
-export default CartListPage
+export default BookMarkPage
