@@ -1,10 +1,10 @@
 import React from 'react'
 import classes from "./Filter.module.css"
-import everyImg from "../assets/전체.png"
-import productImg from "../assets/상품.png"
-import cateImg from "../assets/카테고리.png"
-import exhibitionImg from "../assets/기획전.png"
-import brandImg from "../assets/브랜드.png"
+import everyImg from "../../assets/전체.png"
+import productImg from "../../assets/상품.png"
+import cateImg from "../../assets/카테고리.png"
+import exhibitionImg from "../../assets/기획전.png"
+import brandImg from "../../assets/브랜드.png"
 
 const Filter = ({ filter, setFilter }) => {
   const filterHandler = (type) => {

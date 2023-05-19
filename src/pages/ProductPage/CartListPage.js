@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import classes from "./BookmarkItem.module.css"
-import bookmarkon from "../assets/Property 1=on.png"
-import Card from './Card';
+import React from 'react'
+import classes from "./CartListPage.module.css"
+import Filter from '../../components/Filter/Filter';
+import Card from '../../components/Card/Card';
 
-const BookmarkItem = ({ bookmarks, setBookmarks }) => {
+const CartListPage = ({ itemList2, setBookmarkState, filter, setFilter, setRes2 }) => {
   const handleBookmark = (item) => {
     const bookmark = JSON.parse(localStorage.getItem("bookmark")) || [];
     const itemIndex = bookmark.findIndex(x => x.id === item.id);
@@ -16,20 +16,21 @@ const BookmarkItem = ({ bookmarks, setBookmarks }) => {
       updatedBookmark = [item, ...bookmark];
     }
     localStorage.setItem("bookmark", JSON.stringify(updatedBookmark));
-    setBookmarks(updatedBookmark)
+    setBookmarkState(updatedBookmark)
   }
-  const renderItem = bookmarks.slice(0, 4)
+
   return (
-    <div>
+    <>
+      <Filter setRes2={setRes2} itemList2={itemList2} filter={filter} setFilter={setFilter} />
       <ul className={classes.itemList}>
-        {renderItem?.map(item => {
+        {itemList2.map(item => {
           return (
             <Card item={item} key={`${item.id}`} handleBookmark={handleBookmark} />
           )
         })}
       </ul>
-    </div>
+    </>
   )
 }
 
-export default BookmarkItem
+export default CartListPage

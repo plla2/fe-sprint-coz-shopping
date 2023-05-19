@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import classes from "./MainPage.module.css"
-import { styled } from 'styled-components';
-import Card from './Card';
+import Card from '../Card/Card';
 
 const MainPageItem = ({ itemList, setBookmarks }) => {
 

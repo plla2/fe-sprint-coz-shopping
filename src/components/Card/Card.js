@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import classes from "./Card.module.css"
-import bookmark from "../assets/Property 1=off.png"
-import Modal from '../UI/Modal/Modal';
-import bookmarkon from "../assets/Property 1=on.png"
+import bookmark from "../../assets/Property 1=off.png"
+import bookmarkon from "../../assets/Property 1=on.png"
+import Modal from '../../UI/Modal/Modal';
 
 
 const Card = ({ item, handleBookmark, bookmarked }) => {
