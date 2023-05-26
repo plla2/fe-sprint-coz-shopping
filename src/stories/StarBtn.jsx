@@ -42,7 +42,7 @@
 //   onClick: PropTypes.func,
 // };
 
-// Button.defaultProps = {
+//StarBtn.defaultProps = {
 //   backgroundColor: null,
 //   primary: false,
 //   size: 'medium',
@@ -51,15 +51,29 @@
 import classes from "./StarBtn.module.css";
 import bookmarkIconOff from "../../src/assets/Property 1=off.png";
 import bookmarkIconOn from "../../src/assets/Property 1=on.png";
+import { useState } from "react";
 
 export default function StarBtn({ Primary }) {
+  const [isPrimary, setIsPrimary] = useState(false);
+  const primaryHandler = () => {
+    setIsPrimary(!isPrimary)
+  }
   return (
-    <div>
-      {Primary ? (
-        <img src={bookmarkIconOn} className={classes.onStar} alt={'on-star'}></img>
-      ) : (
-        <img src={bookmarkIconOff} className={classes.offStar} alt={'off-star'}></img>
-      )}
-    </div>
+    <>
+      <div>
+        {Primary ? (
+          <img src={bookmarkIconOn} className={classes.onStar} alt={'on-star'}></img>
+        ) : (
+          <img src={bookmarkIconOff} className={classes.offStar} alt={'off-star'} ></img>
+        )}
+      </div>
+      <div>
+        {isPrimary ? (
+          <img src={bookmarkIconOn} className={classes.onStar} alt={'on-star'} onClick={primaryHandler}></img>
+        ) : (
+          <img src={bookmarkIconOff} className={classes.offStar} alt={'off-star'} onClick={primaryHandler} ></img>
+        )}
+      </div>
+    </>
   );
 }
