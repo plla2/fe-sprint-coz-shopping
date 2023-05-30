@@ -3,6 +3,11 @@
 
 </br>
 
+## 🧲 Stacks
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"> <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white"> <img src="https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white"> <img src="https://img.shields.io/badge/reactrouter-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white">
+
+</br>
+
 ## 💻 Repo소개
 API를 통해 불러온 데이터들을 이용하여 localStorage에 저장하는 방식으로 북마크를 추가, 삭제할 수 있는 쇼핑몰 사이트입니다.
 
